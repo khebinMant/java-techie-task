@@ -10,9 +10,18 @@ server:
 #         serviceUrl: 
 #             defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+# eureka:
+#   client:
+#     register-with-eureka: false
+#     fetch-registry: false
+# server:
+#   port: 8761   
 eureka:
+  instance:
+    hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
-server:
-  port: 8761   
+    registerWithEureka: false #con esto decimos que no se registre eureka dentro del propio eureka
+    fetchRegistry: false
+    serviceUrl: #eureka.instance.hostname hace referencia al mismo localhost declarado previamente
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      #aqui se define el punto se va estar escuchando nuestro servidor de eureka
