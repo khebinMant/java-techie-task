@@ -4,6 +4,7 @@ spring:
     h2:
         console:
             enabled: true
+    application: order-service
 
 #Eureka
 eureka:
